@@ -16,7 +16,7 @@ import java.util.Objects;
 
 @Entity
 @Table( name ="user" , schema = "carlook" )
-public class User {
+public class User_Alda {
     private int id;
     private LocalDate dateOfBirth;
     private String email;
@@ -123,7 +123,7 @@ public class User {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        User user = (User) o;
+        User_Alda user = (User_Alda) o;
         return id == user.id &&
                 Objects.equals(dateOfBirth, user.dateOfBirth) &&
                 Objects.equals(email, user.email) &&

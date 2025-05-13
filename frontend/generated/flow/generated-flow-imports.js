@@ -1,15 +1,3 @@
-import { injectGlobalCss } from 'Frontend/generated/jar-resources/theme-util.js';
-
-import { css, unsafeCSS, registerStyles } from '@vaadin/vaadin-themable-mixin';
-import $cssFromFile_0 from 'Frontend/styles/views/main/main-view.css?inline';
-
-injectGlobalCss($cssFromFile_0.toString(), 'CSSImport end', document);
-import $cssFromFile_1 from 'Frontend/styles/views/entercar/enter-car-view.css?inline';
-
-injectGlobalCss($cssFromFile_1.toString(), 'CSSImport end', document);
-import $cssFromFile_2 from 'Frontend/styles/views/showcars/show-cars-view.css?inline';
-
-injectGlobalCss($cssFromFile_2.toString(), 'CSSImport end', document);
 import '@vaadin/polymer-legacy-adapter/style-modules.js';
 import '@vaadin/vaadin-lumo-styles/color-global.js';
 import '@vaadin/vaadin-lumo-styles/typography-global.js';
@@ -94,7 +82,6 @@ import '@vaadin/grid/src/vaadin-grid-tree-toggle.js';
 import '@vaadin/upload/src/vaadin-upload.js';
 import '@vaadin/virtual-list/src/vaadin-virtual-list.js';
 import 'Frontend/generated/jar-resources/virtualListConnector.js';
-import 'Frontend/styles/shared-styles.js';
 const loadOnDemand = (key) => { return Promise.resolve(0); }
 window.Vaadin = window.Vaadin || {};
 window.Vaadin.Flow = window.Vaadin.Flow || {};

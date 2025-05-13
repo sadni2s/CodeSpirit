@@ -171,7 +171,7 @@ Bitte als Java SDK die Version 19 auswählen! Der Start der Anwendung dauert mit
 
 [3. Teil Vaadin-Tutorial](https://www.youtube.com/watch?v=j1_6cW-EckY)
 <br>
-(Einführung Spring JPA ; Entities und Tabellen; CRUD-Operationen; komplexe Queries; Präsentation JUnit-Test, Round-Trip-Test; Konfiguration JPA; Anpassung LoginControl, Demo mit JPA)
+(Einführung Spring JPA ; Entities und Tabellen; CRUD-Operationen; komplexe Queries; Präsentation JUnit-org.hbrs.se2.project.hellocar.entities.Test, Round-Trip-org.hbrs.se2.project.hellocar.entities.Test; Konfiguration JPA; Anpassung LoginControl, Demo mit JPA)
 
 [4. Teil Vaadin-Tutorial](https://www.youtube.com/watch?v=6FChU4IrUO8)
 <br>

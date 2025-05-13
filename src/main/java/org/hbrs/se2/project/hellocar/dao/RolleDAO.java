@@ -2,7 +2,7 @@ package org.hbrs.se2.project.hellocar.dao;
 
 import org.hbrs.se2.project.hellocar.dtos.RolleDTO;
 import org.hbrs.se2.project.hellocar.dtos.impl.RolleDTOImpl;
-import org.hbrs.se2.project.hellocar.dtos.UserDTO;
+import org.hbrs.se2.project.hellocar.dtos.User_AldaDTO;
 import org.hbrs.se2.project.hellocar.services.db.JDBCConnection;
 import org.hbrs.se2.project.hellocar.services.db.exceptions.DatabaseLayerException;
 
@@ -18,7 +18,7 @@ import java.util.List;
  *
  */
 public class RolleDAO {
-    public List<RolleDTO> getRolesOfUser(UserDTO userDTO ) throws DatabaseLayerException {
+    public List<RolleDTO> getRolesOfUser(User_AldaDTO userDTO ) throws DatabaseLayerException {
         ResultSet set = null;
 
         try {

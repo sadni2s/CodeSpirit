@@ -3,19 +3,18 @@ package org.hbrs.se2.project.hellocar.test;
 import org.hbrs.se2.project.hellocar.dao.UserDAO;
 import org.hbrs.se2.project.hellocar.dtos.CarDTO;
 import org.hbrs.se2.project.hellocar.dtos.RolleDTO;
-import org.hbrs.se2.project.hellocar.dtos.UserDTO;
+import org.hbrs.se2.project.hellocar.dtos.User_AldaDTO;
 import org.hbrs.se2.project.hellocar.entities.Rolle;
-import org.hbrs.se2.project.hellocar.entities.User;
+import org.hbrs.se2.project.hellocar.entities.User_Alda;
 import org.hbrs.se2.project.hellocar.repository.CarRepository;
 import org.hbrs.se2.project.hellocar.repository.RolleRepository;
-import org.hbrs.se2.project.hellocar.repository.UserRepository;
+import org.hbrs.se2.project.hellocar.repository.User_AldaRepository;
 import org.hbrs.se2.project.hellocar.services.db.exceptions.DatabaseLayerException;
 import org.hbrs.se2.project.hellocar.util.Utils;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
-import java.util.Arrays;
 import java.util.List;
 import java.util.Optional;
 
@@ -27,7 +26,7 @@ import static org.junit.jupiter.api.Assertions.assertNotSame;
 class HellocarApplicationTests {
 
     @Autowired
-    private UserRepository userRepository;
+    private User_AldaRepository userRepository;
 
     @Autowired
     private RolleRepository roleRepository;
@@ -37,9 +36,9 @@ class HellocarApplicationTests {
 
     @Test
     void testRolesOfUser() {
-        Optional<User> wrapper = userRepository.findById(1);
+        Optional<User_Alda> wrapper = userRepository.findById(1);
         if ( wrapper.isPresent() ) {
-            User user = wrapper.get();
+            User_Alda user = wrapper.get();
             System.out.println("User: " + user.getLastName());
             List<Rolle> list = user.getRoles();
             assertEquals(2 , list.size() , "Anzahl der Rollen");
@@ -50,7 +49,7 @@ class HellocarApplicationTests {
 
     @Test
     void testUserDTOByAttribute() {
-        UserDTO personDTO = userRepository.getUserByOccupation("Professor").get(0);
+        User_AldaDTO personDTO = userRepository.getUserByOccupation("Professor").get(0);
         System.out.println(personDTO.getFirstName());
         assertEquals("Sascha", personDTO.getFirstName());
         assertEquals(1 , personDTO.getId());
@@ -58,14 +57,14 @@ class HellocarApplicationTests {
 
     @Test
     void testUserDTOByPassword() {
-        UserDTO userDTO = userRepository.findUserByUseridAndPassword("sascha" , "abc");
+        User_AldaDTO userDTO = userRepository.findUserByUseridAndPassword("sascha" , "abc");
         System.out.println(userDTO.getFirstName());
         assertEquals("Sascha", userDTO.getFirstName());
     }
 
     @Test
     void testUserDTOAndItsRoles() {
-        UserDTO userDTO = userRepository.findUserByUseridAndPassword("sascha" , "abc");
+        User_AldaDTO userDTO = userRepository.findUserByUseridAndPassword("sascha" , "abc");
         System.out.println(userDTO.getFirstName());
         assertEquals("Sascha", userDTO.getFirstName());
         List<RolleDTO> list = userDTO.getRoles();
@@ -75,9 +74,9 @@ class HellocarApplicationTests {
 
     @Test
     void testPersonLoad() {
-        Optional<User> wrapper = userRepository.findById(1);
+        Optional<User_Alda> wrapper = userRepository.findById(1);
         if ( wrapper.isPresent() ) {
-            User user = wrapper.get();
+            User_Alda user = wrapper.get();
             assertEquals("Alda" , user.getLastName());
         }
     }
@@ -124,7 +123,7 @@ class HellocarApplicationTests {
     void testFindUserWithJDBC() {
         UserDAO userDAO = new UserDAO();
         try {
-            UserDTO userDTO = userDAO.findUserByUseridAndPassword("sascha" , "abc");
+            User_AldaDTO userDTO = userDAO.findUserByUseridAndPassword("sascha" , "abc");
             System.out.println(userDTO.toString());
 
             assertEquals("Sascha", userDTO.getFirstName());

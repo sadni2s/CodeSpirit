@@ -14,7 +14,7 @@ import java.util.Objects;
 @Table( name ="rolle" , schema = "carlook" )
 public class Rolle {
     private String bezeichhnung;
-    private List<User> users;
+    private List<User_Alda> users;
 
     @Id
     @Column(name = "bezeichhnung")
@@ -40,11 +40,11 @@ public class Rolle {
     }
 
     @ManyToMany(mappedBy = "roles", fetch = FetchType.EAGER )
-    public List<User> getUsers() {
+    public List<User_Alda> getUsers() {
         return users;
     }
 
-    public void setUsers(List<User> users) {
+    public void setUsers(List<User_Alda> users) {
         this.users = users;
     }
 }
