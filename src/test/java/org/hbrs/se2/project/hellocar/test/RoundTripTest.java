@@ -1,7 +1,7 @@
 package org.hbrs.se2.project.hellocar.test;
 
-import org.hbrs.se2.project.hellocar.entities.User_Alda;
-import org.hbrs.se2.project.hellocar.repository.User_AldaRepository;
+import org.hbrs.se2.project.hellocar.entities.User;
+import org.hbrs.se2.project.hellocar.repository.UserRepository;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,7 +16,7 @@ public class RoundTripTest {
 
 
     @Autowired
-    private User_AldaRepository userRepository;
+    private UserRepository userRepository;
 
     @Test
     /**
@@ -28,7 +28,7 @@ public class RoundTripTest {
 
         // Schritt 1: C = Create (hier: Erzeugung und Abspeicherung mit der Method save()
         // Anlegen eines Users. Eine ID wird automatisch erzeugt durch JPA
-        User_Alda user = new User_Alda();
+        User user = new User();
         user.setEmail("test@myserver.de");
         user.setFirstName( "Torben" );
         user.setLastName("Michel");
@@ -39,8 +39,8 @@ public class RoundTripTest {
         int idTmp = user.getId();
 
         // Schritt 2: R = Read (hier: Auslesen über die Methode find()ById
-        Optional<User_Alda> wrapper = userRepository.findById( idTmp );
-        User_Alda userAfterCreate = null;
+        Optional<User> wrapper = userRepository.findById( idTmp );
+        User userAfterCreate = null;
         if ( wrapper.isPresent() ) {
             userAfterCreate = wrapper.get();
         }
@@ -54,7 +54,7 @@ public class RoundTripTest {
         // Schritt 4: D = Deletion, also Löschen des Users, um Datenmüll zu vermeiden
         userRepository.deleteById(idTmp);
         // Schritt 4.1: Wir sind vorsichtig und gucken, ob der User wirklich gelöscht wurde ;-)
-        Optional<User_Alda> wrapperAfterDelete = userRepository.findById(idTmp);
+        Optional<User> wrapperAfterDelete = userRepository.findById(idTmp);
         System.out.println("Wrapper: " + wrapperAfterDelete);
         assertFalse( wrapperAfterDelete.isPresent() );
     }

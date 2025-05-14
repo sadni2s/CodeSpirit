@@ -31,8 +31,8 @@ public class StudentDTOImpl implements StudentDTO {
     public String toString() {
         return "StudentDTOImpl{" +
                 "id=" + id +
-                ", studiengang=" + studiengang +
-                ", beschreibung=" + beschreibung +
+                ", studiengang='" + studiengang + '\'' +
+                ", beschreibung='" + beschreibung + '\'' +
                 ", kontakt=" + kontakt +
                 '}';
     }
