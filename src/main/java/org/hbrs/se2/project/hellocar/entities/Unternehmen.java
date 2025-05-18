@@ -7,33 +7,38 @@ import java.util.Objects;
 @Table(name = "Unternehmen", schema = "public")
 public class Unternehmen extends User {
 
+    private int id;
+    private String startupName;
+    private String beschreibung;
+    private int gruendungsjahr;
+    private String standort;
+
     @Id
     @Column(name = "User_ID")
-    private int id;
-    public int getId() { return id; }
-    public void setId(int id) { this.id = id; }
+    public int getId() {
+        return id;
+    }
+    public void setId(int id) {
+        this.id = id;
+    }
 
     @Basic
     @Column(name = "Startup_Name")
-    private String startupName;
     public String getStartupName() { return startupName; }
     public void setStartupName(String startupName) { this.startupName = startupName; }
 
     @Basic
     @Column(name = "Beschreibung")
-    private String beschreibung;
     public String getBeschreibung() { return beschreibung; }
     public void setBeschreibung(String beschreibung) { this.beschreibung = beschreibung; }
 
     @Basic
     @Column(name = "Gruendungsjahr")
-    private int gruendungsjahr;
     public int getGruendungsjahr() { return gruendungsjahr; }
     public void setGruendungsjahr(int gruendungsjahr) { this.gruendungsjahr = gruendungsjahr; }
 
     @Basic
     @Column(name = "Standort")
-    private String standort;
     public String getStandort() { return standort; }
     public void setStandort(String standort) { this.standort = standort; }
 

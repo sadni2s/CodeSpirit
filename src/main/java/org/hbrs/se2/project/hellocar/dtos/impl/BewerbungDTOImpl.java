@@ -11,20 +11,36 @@ public class BewerbungDTOImpl implements BewerbungDTO {
     private LocalDate bewerbungsdatum;
 
     @Override
-    public int getId() { return id; }
-    public void setId(int id) { this.id = id; }
+    public int getId() {
+        return id;
+    }
+    public void setId(int id) {
+        this.id = id;
+    }
 
     @Override
-    public String getBewerbungstext() { return bewerbungstext; }
-    public void setBewerbungstext(String bewerbungstext) { this.bewerbungstext = bewerbungstext; }
+    public String getBewerbungstext() {
+        return bewerbungstext;
+    }
+    public void setBewerbungstext(String bewerbungstext) {
+        this.bewerbungstext = bewerbungstext;
+    }
 
     @Override
-    public String getStatus() { return status; }
-    public void setStatus(String status) { this.status = status; }
+    public String getStatus() {
+        return status;
+    }
+    public void setStatus(String status) {
+        this.status = status;
+    }
 
     @Override
-    public LocalDate getBewerbungsdatum() { return bewerbungsdatum; }
-    public void setBewerbungsdatum(LocalDate bewerbungsdatum) { this.bewerbungsdatum = bewerbungsdatum; }
+    public LocalDate getBewerbungsdatum() {
+        return bewerbungsdatum;
+    }
+    public void setBewerbungsdatum(LocalDate bewerbungsdatum) {
+        this.bewerbungsdatum = bewerbungsdatum;
+    }
 
     @Override
     public String toString() {
